@@ -15,17 +15,12 @@ use Throwable;
 class ControllerTester
 {
 
-	private IDispatcher $dispatcher;
-
-	private IErrorHandler $errorHandler;
-
-	private ?IApplication $middlewaresApplication = null;
-
-	public function __construct(IDispatcher $dispatcher, IErrorHandler $errorHandler, ?IApplication $middlewaresApplication = null)
+	public function __construct(
+		private IDispatcher $dispatcher,
+		private IErrorHandler $errorHandler,
+		private ?IApplication $middlewaresApplication = null,
+	)
 	{
-		$this->dispatcher = $dispatcher;
-		$this->errorHandler = $errorHandler;
-		$this->middlewaresApplication = $middlewaresApplication;
 	}
 
 	public function createRequest(string $uri): TestControllerRequest

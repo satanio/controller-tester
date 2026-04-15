@@ -8,14 +8,20 @@
     <arg name="colors"/>
     <arg value="nsp"/>
     <!-- Contributte Coding Standard -->
-    <rule ref="./vendor/contributte/qa/ruleset.xml"/>
+    <rule ref="./vendor/contributte/qa/ruleset.xml">
+        <exclude name="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+    </rule>
+    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing"/>
     <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
         <properties>
             <property name="rootNamespaces" type="array">
                 <element key="src" value="Adbros\Tester\ControllerTester"/>
                 <element key="tests" value="Adbros\Tester\ControllerTester\Tests"/>
             </property>
-            <property name="extensions" type="array" value="php,phpt"/>
+            <property name="extensions" type="array">
+                <element value="php"/>
+                <element value="phpt"/>
+            </property>
         </properties>
     </rule>
 </ruleset>
