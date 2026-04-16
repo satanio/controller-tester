@@ -8,8 +8,11 @@ use Tester\Assert;
 class TestControllerResult
 {
 
-	public function __construct(private readonly ApiResponse $response)
+	private ApiResponse $response;
+
+	public function __construct(ApiResponse $response)
 	{
+		$this->response = $response;
 	}
 
 	public function getResponse(): ApiResponse

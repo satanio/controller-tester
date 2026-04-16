@@ -11,6 +11,8 @@ class TestControllerRequest
 
 	use SmartObject;
 
+	private string $uri;
+
 	/**	@var mixed[] */
 	private array $parameters = [];
 
@@ -32,8 +34,9 @@ class TestControllerRequest
 	/** @var array<string, Psr7UploadedFile> */
 	private array $files = [];
 
-	public function __construct(private readonly string $uri)
+	public function __construct(string $uri)
 	{
+		$this->uri = $uri;
 	}
 
 	public function getUri(): string
